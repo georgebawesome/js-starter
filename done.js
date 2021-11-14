@@ -61,7 +61,7 @@ console.log(a.name + ": " + a.number);
 console.log(b.name + ": " + b.number);
 
 //for loops
-const names = ["John", "Maria", "Nexa"];
+var names = ["John", "Maria", "Nexa"];
 for (name of names) {
 	console.log(name);
 	if (name === "Maria") {
@@ -81,3 +81,59 @@ while (loading < 100) {
 var i = 1;
 do console.log(i++);
 while (i < 10);
+
+//for each
+var companies = [
+	{ name: "Company One", category: "Finance", start: 1981, end: 2003 },
+	{ name: "Company Two", category: "Retail", start: 1992, end: 2008 },
+	{ name: "Company Three", category: "Auto", start: 1999, end: 2007 },
+	{ name: "Company Four", category: "Retail", start: 1989, end: 2010 },
+	{ name: "Company Five", category: "Technology", start: 2009, end: 2014 },
+	{ name: "Company Six", category: "Finance", start: 1987, end: 2010 },
+	{ name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
+	{ name: "Company Eight", category: "Technology", start: 2011, end: 2016 },
+	{ name: "Company Nine", category: "Retail", start: 1981, end: 1989 },
+];
+
+companies.forEach(function (companies) {
+	console.log(companies.category);
+});
+
+//filter array using for loop
+var ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+for (var i = 0; i < ages.length; i++) {
+	if (ages[i] >= 21) {
+		console.log(ages[i]);
+	}
+}
+
+//filter array
+var ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+var canDrink = ages.filter(function (age) {
+	if (age >= 21) {
+		return true;
+	}
+});
+console.log(canDrink);
+
+//filter array in one line using arrow function
+var canSmrink = ages.filter((age) => age >= 21);
+console.log(canSmrink);
+
+//filter example 2
+var companies = [
+	{ name: "Company One", category: "Finance", start: 1981, end: 2003 },
+	{ name: "Company Two", category: "Retail", start: 1992, end: 2008 },
+	{ name: "Company Three", category: "Auto", start: 1999, end: 2007 },
+	{ name: "Company Four", category: "Retail", start: 1989, end: 2010 },
+	{ name: "Company Five", category: "Technology", start: 2009, end: 2014 },
+	{ name: "Company Six", category: "Finance", start: 1987, end: 2010 },
+	{ name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
+	{ name: "Company Eight", category: "Technology", start: 2011, end: 2016 },
+	{ name: "Company Nine", category: "Retail", start: 1981, end: 1989 },
+];
+
+var lastedTenYears = companies.filter(
+	(company) => company.end - company.start >= 10
+);
+console.log(lastedTenYears);
