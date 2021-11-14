@@ -7,6 +7,12 @@ if (n1 == n2) {
 	console.log("False");
 }
 
+//fi else new way
+let n1 = 6;
+let n2 = 7;
+var val = n1 > n2 ? `n1 is greater` : `n2 is greater`;
+console.log(val);
+
 //switch statement
 var day = 2;
 switch (day) {
@@ -99,6 +105,44 @@ companies.forEach(function (companies) {
 	console.log(companies.category);
 });
 
+//filter example
+var lastedTenYears = companies.filter(
+	(company) => company.end - company.start >= 10
+);
+console.log(lastedTenYears);
+
+//array map 1
+var companyNames = companies.map((company) => {
+	return company.name;
+});
+
+console.log(companyNames);
+
+//array map 2
+var companyDetials = companies.map((company) => {
+	return `${company.name} lived from ${company.start} to ${company.end}`;
+});
+
+console.log(companyDetials);
+
+// array sort method
+var sortedCompanies = companies.sort((c1, c2) => {
+	if (c1.start > c2.start) {
+		return 1;
+	} else {
+		return -1;
+	}
+});
+
+console.log(sortedCompanies);
+
+// array reduce
+var compTotYrs = companies.reduce(
+	(total, company) => total + (company.end - company.start),
+	0
+);
+console.log(compTotYrs);
+
 //filter array using for loop
 var ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 for (var i = 0; i < ages.length; i++) {
@@ -120,20 +164,19 @@ console.log(canDrink);
 var canSmrink = ages.filter((age) => age >= 21);
 console.log(canSmrink);
 
-//filter example 2
-var companies = [
-	{ name: "Company One", category: "Finance", start: 1981, end: 2003 },
-	{ name: "Company Two", category: "Retail", start: 1992, end: 2008 },
-	{ name: "Company Three", category: "Auto", start: 1999, end: 2007 },
-	{ name: "Company Four", category: "Retail", start: 1989, end: 2010 },
-	{ name: "Company Five", category: "Technology", start: 2009, end: 2014 },
-	{ name: "Company Six", category: "Finance", start: 1987, end: 2010 },
-	{ name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
-	{ name: "Company Eight", category: "Technology", start: 2011, end: 2016 },
-	{ name: "Company Nine", category: "Retail", start: 1981, end: 1989 },
-];
+//sort array
+var ageSort = ages.sort((a, b) => (a > b ? -1 : 1));
+console.log(ageSort);
 
-var lastedTenYears = companies.filter(
-	(company) => company.end - company.start >= 10
-);
-console.log(lastedTenYears);
+// array reduce
+var ageSum = ages.reduce((total, age) => total + age, 0);
+console.log(ageSum);
+
+//combime array methods
+var combined = ages;
+//	.map((age) => age * 2)
+//.filter((age) => age >= 21)
+//	.sort((a, b) => a - b)
+//.reduce((a, b) => a + b, 0);
+
+console.log(combined);
