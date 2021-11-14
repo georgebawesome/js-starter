@@ -182,7 +182,45 @@ var combined = ages;
 
 console.log(combined);
 
-// Create a Page class (Parent)
+//es6 class
+class User {
+	constructor(username, email, password) {
+		this.username = username;
+		this.email = email;
+		this.password = password;
+	}
+	register() {
+		console.log(
+			`${this.username} is now registered with email ${this.email}`
+		);
+	}
+	static countUsers() {
+		console.log(`there are 50 users in the database`);
+	}
+}
+
+let bob = new User("bob", "bob@example.com", "12345");
+bob.register();
+User.countUsers();
+
+// extendt that class to use with another
+class Member extends User {
+	constructor(username, email, password, memberPackage) {
+		super(username, email, password);
+		this.package = memberPackage;
+	}
+	getPackage() {
+		console.log(
+			`${this.username} is subscribed to the ${this.package} package`
+		);
+	}
+}
+
+let mike = new Member("mike", "mike@gmail.com", "123", "Standard");
+
+mike.register();
+mike.getPackage();
+
 class Page {
 	constructor(url) {
 		this.url = url;
@@ -196,6 +234,16 @@ class Page {
 		console.log("refreshing...");
 	}
 }
+
+// Create an instance of the Page class
+const p1 = new Page("https://medium.com");
+console.log(p1.url);
+p1.open();
+
+const p2 = new Page("https://google.com");
+console.log(p2.url);
+p2.open();
+p2.refresh();
 
 // Create a ContactPage (child) class
 class ContactPage extends Page {
@@ -213,22 +261,7 @@ class ContactPage extends Page {
 	}
 }
 
-class HomePage extends Page {}
-
-// Create an instance of the Page class
-const p1 = new Page("http://automationbro.com");
-console.log(p1.url);
-p1.open();
-
-const p2 = new Page("http://google.com");
-console.log(p2.url);
-p2.open();
-p2.refresh();
-
 // Create an instance of the ContactPage class
-const contact = new ContactPage(
-	"http://automationbro.com/contact",
-	"Contact Page"
-);
+const contact = new ContactPage("https://medium.com/contact", "Contact Page");
 contact.open();
 contact.loginBtn;
