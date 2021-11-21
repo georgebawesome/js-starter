@@ -266,17 +266,22 @@ const contact = new ContactPage("https://medium.com/contact", "Contact Page");
 contact.open();
 contact.loginBtn;
 
-
 /* Spread Operator / Rest Operator */
 
 // add the elements of an existing array into a new array
-var certsToAdd = ['Algorithms and Data Structures', 'Front End Libraries']; 
-var certifications = ['Responsive Web Design', ...certsToAdd, 'Data Visualization', 'APIs and Microservices', 'Quality Assurance and Information Security'];
+var certsToAdd = ["Algorithms and Data Structures", "Front End Libraries"];
+var certifications = [
+	"Responsive Web Design",
+	...certsToAdd,
+	"Data Visualization",
+	"APIs and Microservices",
+	"Quality Assurance and Information Security",
+];
 console.log(certifications);
 
 // pass elements of an array as arguments to a function
-function addThreeNumbers(x, y, z) { 
-	console.log(x+y+z)
+function addThreeNumbers(x, y, z) {
+	console.log(x + y + z);
 }
 var args = [0, 1, 2, 3];
 addThreeNumbers(...args);
@@ -284,10 +289,9 @@ addThreeNumbers(...args);
 // copy arrays
 var arr = [1, 2, 3];
 var arr2 = [...arr]; // like arr.slice()
-arr2.push(4); 
+arr2.push(4);
 console.log(arr);
 console.log(arr2);
-
 
 // concatenate arrays
 var arr1 = [0, 1, 2];
@@ -296,13 +300,38 @@ var arr2 = [3, 4, 5];
 arr1 = [...arr1, "freeCodeCamp", ...arr2];
 console.log(arr1);
 
-
 // REST: condense multiple elements into an array
 function multiply(multiplier, ...theArgs) {
-  return theArgs.map(function(element) {
-    return multiplier * element;
-  });
+	return theArgs.map(function (element) {
+		return multiplier * element;
+	});
 }
 
-var arr = multiply(2, 1, 2, 3); 
-console.log(arr)
+var arr = multiply(2, 1, 2, 3);
+console.log(arr);
+
+//if then trniary operator
+const grade = 35;
+const result = grade > 32 ? "Pass" : "Fail";
+console.log(result);
+
+//promises
+let p = new Promise((resolve, reject) => {
+	let a = 1 + 1;
+	if (a == 2) {
+		resolve("Sucess");
+	} else {
+		reject("Failed");
+	}
+});
+
+p.then((message) => {
+	console.log(message);
+}).catch((message) => {
+	console.log(message);
+});
+
+// setInterval()
+setInterval(function () {
+	console.log("Oooo Yeaaa!");
+}, 2000);
