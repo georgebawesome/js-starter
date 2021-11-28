@@ -2,9 +2,9 @@
 let n1 = 6;
 let n2 = 7;
 if (n1 == n2) {
-	console.log("True");
+	console.log('True');
 } else {
-	console.log("False");
+	console.log('False');
 }
 
 //fi else new way
@@ -17,16 +17,16 @@ console.log(val);
 var day = 2;
 switch (day) {
 	case 1:
-		console.log("Monday");
+		console.log('Monday');
 		break;
 	case 2:
-		console.log("Tuesday");
+		console.log('Tuesday');
 		break;
 	case 3:
-		console.log("Wednesday");
+		console.log('Wednesday');
 		break;
 	default:
-		console.log("Another day");
+		console.log('Another day');
 }
 
 //function without parameter
@@ -37,22 +37,22 @@ demo();
 
 //function with parameters
 function test(name, age) {
-	console.log("Hi you are " + name + " and is " + age + " years old");
+	console.log('Hi you are ' + name + ' and is ' + age + ' years old');
 }
-test("David", 25);
-test("George", 30);
+test('David', 25);
+test('George', 30);
 
 //prompt function
-var name = prompt("Please enter your name");
-var age = prompt("Please enter your age");
+var name = prompt('Please enter your name');
+var age = prompt('Please enter your age');
 console.log(`Hi, you are ${name} and you are ${age} years old`);
 
 //confrim function
 var answer = confirm(`Are you a good guy?`);
 if (answer == true) {
-	console.log("Keep it up");
+	console.log('Keep it up');
 } else {
-	console.log("Grow up bro");
+	console.log('Grow up bro');
 }
 
 //constructor function
@@ -61,18 +61,18 @@ function contact(name, number) {
 	this.name = name;
 	this.number = number;
 }
-var a = new contact("David", 12345);
-var b = new contact("Amy", 98371);
+var a = new contact('David', 12345);
+var b = new contact('Amy', 98371);
 
-console.log(a.name + ": " + a.number);
-console.log(b.name + ": " + b.number);
+console.log(a.name + ': ' + a.number);
+console.log(b.name + ': ' + b.number);
 
 //for loops
-var names = ["John", "Maria", "Nexa"];
+var names = ['John', 'Maria', 'Nexa'];
 for (name of names) {
 	console.log(name);
-	if (name === "Maria") {
-		console.log("Maria is in my list");
+	if (name === 'Maria') {
+		console.log('Maria is in my list');
 		break;
 	}
 }
@@ -80,7 +80,7 @@ for (name of names) {
 //while loops
 let loading = 0;
 while (loading < 100) {
-	console.log("Still loading");
+	console.log('Still loading');
 	loading++;
 }
 
@@ -91,15 +91,15 @@ while (i < 10);
 
 //for each
 var companies = [
-	{ name: "Company One", category: "Finance", start: 1981, end: 2003 },
-	{ name: "Company Two", category: "Retail", start: 1992, end: 2008 },
-	{ name: "Company Three", category: "Auto", start: 1999, end: 2007 },
-	{ name: "Company Four", category: "Retail", start: 1989, end: 2010 },
-	{ name: "Company Five", category: "Technology", start: 2009, end: 2014 },
-	{ name: "Company Six", category: "Finance", start: 1987, end: 2010 },
-	{ name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
-	{ name: "Company Eight", category: "Technology", start: 2011, end: 2016 },
-	{ name: "Company Nine", category: "Retail", start: 1981, end: 1989 },
+	{ name: 'Company One', category: 'Finance', start: 1981, end: 2003 },
+	{ name: 'Company Two', category: 'Retail', start: 1992, end: 2008 },
+	{ name: 'Company Three', category: 'Auto', start: 1999, end: 2007 },
+	{ name: 'Company Four', category: 'Retail', start: 1989, end: 2010 },
+	{ name: 'Company Five', category: 'Technology', start: 2009, end: 2014 },
+	{ name: 'Company Six', category: 'Finance', start: 1987, end: 2010 },
+	{ name: 'Company Seven', category: 'Auto', start: 1986, end: 1996 },
+	{ name: 'Company Eight', category: 'Technology', start: 2011, end: 2016 },
+	{ name: 'Company Nine', category: 'Retail', start: 1981, end: 1989 },
 ];
 
 companies.forEach(function (companies) {
@@ -107,9 +107,7 @@ companies.forEach(function (companies) {
 });
 
 //filter example
-var lastedTenYears = companies.filter(
-	(company) => company.end - company.start >= 10
-);
+var lastedTenYears = companies.filter((company) => company.end - company.start >= 10);
 console.log(lastedTenYears);
 
 //array map 1
@@ -138,10 +136,7 @@ var sortedCompanies = companies.sort((c1, c2) => {
 console.log(sortedCompanies);
 
 // array reduce
-var compTotYrs = companies.reduce(
-	(total, company) => total + (company.end - company.start),
-	0
-);
+var compTotYrs = companies.reduce((total, company) => total + (company.end - company.start), 0);
 console.log(compTotYrs);
 
 //filter array using for loop
@@ -190,16 +185,14 @@ class User {
 		this.password = password;
 	}
 	register() {
-		console.log(
-			`${this.username} is now registered with email ${this.email}`
-		);
+		console.log(`${this.username} is now registered with email ${this.email}`);
 	}
 	static countUsers() {
 		console.log(`there are 50 users in the database`);
 	}
 }
 
-let bob = new User("bob", "bob@example.com", "12345");
+let bob = new User('bob', 'bob@example.com', '12345');
 bob.register();
 User.countUsers();
 
@@ -210,13 +203,11 @@ class Member extends User {
 		this.package = memberPackage;
 	}
 	getPackage() {
-		console.log(
-			`${this.username} is subscribed to the ${this.package} package`
-		);
+		console.log(`${this.username} is subscribed to the ${this.package} package`);
 	}
 }
 
-let mike = new Member("mike", "mike@gmail.com", "123", "Standard");
+let mike = new Member('mike', 'mike@gmail.com', '123', 'Standard');
 
 mike.register();
 mike.getPackage();
@@ -227,20 +218,20 @@ class Page {
 	}
 
 	open() {
-		console.log("Opening page", this.url);
+		console.log('Opening page', this.url);
 	}
 
 	refresh() {
-		console.log("refreshing...");
+		console.log('refreshing...');
 	}
 }
 
 // Create an instance of the Page class
-const p1 = new Page("https://medium.com");
+const p1 = new Page('https://medium.com');
 console.log(p1.url);
 p1.open();
 
-const p2 = new Page("https://google.com");
+const p2 = new Page('https://google.com');
 console.log(p2.url);
 p2.open();
 p2.refresh();
@@ -253,29 +244,29 @@ class ContactPage extends Page {
 	}
 
 	open() {
-		console.log("Opening page", this.url, "with title", this.title);
+		console.log('Opening page', this.url, 'with title', this.title);
 	}
 
 	get loginBtn() {
-		console.log("login btn selector");
+		console.log('login btn selector');
 	}
 }
 
 // Create an instance of the ContactPage class
-const contact = new ContactPage("https://medium.com/contact", "Contact Page");
+const contact = new ContactPage('https://medium.com/contact', 'Contact Page');
 contact.open();
 contact.loginBtn;
 
 /* Spread Operator / Rest Operator */
 
 // add the elements of an existing array into a new array
-var certsToAdd = ["Algorithms and Data Structures", "Front End Libraries"];
+var certsToAdd = ['Algorithms and Data Structures', 'Front End Libraries'];
 var certifications = [
-	"Responsive Web Design",
+	'Responsive Web Design',
 	...certsToAdd,
-	"Data Visualization",
-	"APIs and Microservices",
-	"Quality Assurance and Information Security",
+	'Data Visualization',
+	'APIs and Microservices',
+	'Quality Assurance and Information Security',
 ];
 console.log(certifications);
 
@@ -297,7 +288,7 @@ console.log(arr2);
 var arr1 = [0, 1, 2];
 var arr2 = [3, 4, 5];
 //arr1.concat(arr2);
-arr1 = [...arr1, "freeCodeCamp", ...arr2];
+arr1 = [...arr1, 'freeCodeCamp', ...arr2];
 console.log(arr1);
 
 // REST: condense multiple elements into an array
@@ -312,16 +303,16 @@ console.log(arr);
 
 //if then trniary operator
 const grade = 35;
-const result = grade > 32 ? "Pass" : "Fail";
+const result = grade > 32 ? 'Pass' : 'Fail';
 console.log(result);
 
 //promises
 let p = new Promise((resolve, reject) => {
 	let a = 1 + 1;
 	if (a == 2) {
-		resolve("Sucess");
+		resolve('Sucess');
 	} else {
-		reject("Failed");
+		reject('Failed');
 	}
 });
 
@@ -333,7 +324,7 @@ p.then((message) => {
 
 // setInterval()
 setInterval(function () {
-	console.log("Oooo Yeaaa!");
+	console.log('Oooo Yeaaa!');
 }, 2000);
 
 // callbacks
@@ -347,3 +338,31 @@ function myCalculator(num1, num2, myCallback) {
 }
 
 myCalculator(5, 5, myDisplayer);
+
+// fetch old way
+fetch('dash.jpg')
+	.then((respone) => {
+		console.log('Response recived');
+		return respone.blob();
+	})
+	.then((blob) => {
+		console.log(blob);
+		document.getElementById('img').src = URL.createObjectURL(blob);
+	})
+	.catch((error) => {
+		console.log(error);
+	});
+
+//fetch new way
+async function getDash() {
+	const response = await fetch('dash.jpg');
+	const blob = await response.blob();
+	document.getElementById('img').src = URL.createObjectURL(blob);
+}
+getDash()
+	.catch((error) => {
+		console.log(error);
+	})
+	.then(() => {
+		console.log('got it');
+	});
