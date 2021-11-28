@@ -327,6 +327,10 @@ setInterval(function () {
 	console.log('Oooo Yeaaa!');
 }, 2000);
 
+setTimeout(() => {
+	console.log(32);
+}, 1000);
+
 // callbacks
 function myDisplayer(some) {
 	console.log(some);
@@ -366,3 +370,17 @@ getDash()
 	.then(() => {
 		console.log('got it');
 	});
+
+//async await
+const loadTodos = async () => {
+	try {
+		const res = await fetch(`https://jsonplaceholder.typicode.com/todos/1`);
+		const data = await res.json();
+		console.log(data);
+		console.log(res.ok, res.status);
+	} catch (err) {
+		console.log(err);
+	}
+};
+
+loadTodos();
