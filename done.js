@@ -56,7 +56,6 @@ if (answer == true) {
 }
 
 //constructor function
-
 function contact(name, number) {
 	this.name = name;
 	this.number = number;
@@ -68,10 +67,10 @@ console.log(a.name + ': ' + a.number);
 console.log(b.name + ': ' + b.number);
 
 //for loops
-var names = ['John', 'Maria', 'Nexa'];
-for (name of names) {
-	console.log(name);
-	if (name === 'Maria') {
+var members = ['John', 'Maria', 'Nexa'];
+for (member of members) {
+	console.log(member);
+	if (member === 'Maria') {
 		console.log('Maria is in my list');
 		break;
 	}
@@ -89,7 +88,7 @@ var i = 1;
 do console.log(i++);
 while (i < 10);
 
-//for each
+//lopps in objects
 var companies = [
 	{ name: 'Company One', category: 'Finance', start: 1981, end: 2003 },
 	{ name: 'Company Two', category: 'Retail', start: 1992, end: 2008 },
@@ -102,6 +101,7 @@ var companies = [
 	{ name: 'Company Nine', category: 'Retail', start: 1981, end: 1989 },
 ];
 
+//for each
 companies.forEach(function (companies) {
 	console.log(companies.category);
 });
@@ -114,14 +114,12 @@ console.log(lastedTenYears);
 var companyNames = companies.map((company) => {
 	return company.name;
 });
-
 console.log(companyNames);
 
 //array map 2
 var companyDetials = companies.map((company) => {
 	return `${company.name} lived from ${company.start} to ${company.end}`;
 });
-
 console.log(companyDetials);
 
 // array sort method
@@ -132,7 +130,6 @@ var sortedCompanies = companies.sort((c1, c2) => {
 		return -1;
 	}
 });
-
 console.log(sortedCompanies);
 
 // array reduce
