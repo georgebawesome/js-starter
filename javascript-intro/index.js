@@ -1,0 +1,12 @@
+// require('./var-dt.js')
+// require('./comparison.js')
+// require('./logical.js')
+// require('./if-else.js')
+// require('./loops.js')
+// require('./function.js')
+// require('./var-let-const.js')
+require('./classes.js')
+// require('./template-literal.js')
+// require('./promises.js')
+// require('./async-await.js')
+
